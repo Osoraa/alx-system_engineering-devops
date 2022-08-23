@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Lopps between 1 and 10 and does specific tasks
+
+i=0
+text="Best School"
+
+until ((i++ == 10)); do
+    if [ "$i" -eq 3 ]; then
+        echo "bad luck"
+    elif [ "$i" -eq 8 ]; then
+        echo "good luck"
+    else
+        echo "$text"
+    fi
+done
