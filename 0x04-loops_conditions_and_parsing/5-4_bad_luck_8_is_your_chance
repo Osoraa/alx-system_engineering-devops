@@ -4,10 +4,10 @@
 i=0
 text="Best School"
 
-while ((i++ < 10)); do
-    if [ "$i" -eq 3 ]; then
+while ((i++ <= 10)); do
+    if [ "$i" -eq 4 ]; then
         echo "bad luck"
-    elif [ "$i" -eq 8 ]; then
+    elif [ "$i" -eq 9 ]; then
         echo "good luck"
     else
         echo "$text"
