@@ -12,6 +12,6 @@ while ((i++ < 20)); do
         echo "bad luck from Japan"
     fi
     if [ "$i" -eq 17 ]; then
-        echo "bad luck from Japan"
+        echo "bad luck from Italy"
     fi
 done
