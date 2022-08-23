@@ -5,13 +5,15 @@ i=0
 
 while ((i++ < 20)); do
     echo "$i"
-    if [ "$i" -eq 4 ]; then
+    case "$i" in
+    4)
         echo "bad luck from China"
-    fi
-    if [ "$i" -eq 9 ]; then
+        ;;
+    9)
         echo "bad luck from Japan"
-    fi
-    if [ "$i" -eq 17 ]; then
+        ;;
+    17)
         echo "bad luck from Italy"
-    fi
+        ;;
+    esac
 done
