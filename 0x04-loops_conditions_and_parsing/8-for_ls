@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# displays contents of a directory after the hyphen
+
+for i in *; do
+    echo "$i" | cut -d "-" -f 2
+done
