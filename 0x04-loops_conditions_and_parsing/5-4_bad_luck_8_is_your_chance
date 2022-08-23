@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Lopps between 1 and 10 and does specific tasks
+# Lopps between 1 and 10 and does a certain task at specific loops
 
 i=0
 text="Best School"
