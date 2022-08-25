@@ -2,4 +2,4 @@
 
 ## Key Takeaways from this Project
 
-- 
+- A deeper understanding of the OSI model.
