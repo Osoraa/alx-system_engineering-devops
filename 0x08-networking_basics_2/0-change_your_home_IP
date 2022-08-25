@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Overwrites the systems hosts file
+
+echo -e "127.0.0.2 \t localhost\n8.8.8.8 \t facebook.com" > /etc/hosts
