@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Pings an IP address.
+# Pings IP addresses.
 
 if [ "$#" == 0 ]; then
     echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
