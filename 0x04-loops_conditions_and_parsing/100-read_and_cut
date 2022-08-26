@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Reads users from the passwd file
+
+cut -d : -f 1,3,6 /etc/passwd
