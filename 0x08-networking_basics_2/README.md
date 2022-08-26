@@ -6,6 +6,8 @@
 
 - The ifconfig command, loopback concept, subnet masks, localhost, Broadcast, Multicast and the _0.0.0.0_ address
 
-- [Netcat](https://linux.die.net/man/1/nc) in *nix.
+- Network management commands like; nc, ifconfig, and nslookup.
 
-- The hosts file in *nix.
+- More bash scripting tips.
+
+- The importance of the hosts file.

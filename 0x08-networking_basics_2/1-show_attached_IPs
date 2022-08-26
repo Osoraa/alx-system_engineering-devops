@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Displays all active IPv4s on a machine
+
+ips=$(hostname -I | tr " " "\n")
+
+for ip in "$ips"; do
+    echo "$ip" | grep -v :
+done
