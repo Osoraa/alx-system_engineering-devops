@@ -3,6 +3,6 @@
 
 ips=$(hostname -I | tr " " "\n")
 
-for ip in "$ips"; do
+for ip in $ips; do
     echo "$ip" | grep -v :
 done
