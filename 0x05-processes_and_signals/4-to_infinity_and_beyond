@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Displays text and chills for 2 seconds
 
-text="To Infinity and beyond"
+text="To infinity and beyond"
 while true; do
     echo "$text"
     sleep 2
