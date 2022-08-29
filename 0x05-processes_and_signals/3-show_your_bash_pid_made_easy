@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Grep the keyword "bash" from ps output
+
+pgrep -l bash
