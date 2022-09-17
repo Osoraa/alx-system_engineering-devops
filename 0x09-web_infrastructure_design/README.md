@@ -13,3 +13,5 @@
 - Intro to Load Balancing
 
 - Failure recovery techniques and High Availability
+
+- Explaining in practical terms, specific architectures, why and how they would be implemented
