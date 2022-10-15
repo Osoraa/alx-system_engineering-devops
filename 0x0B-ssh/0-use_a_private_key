@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
+# Connects to an ALX remote server using a predefined private key
+
 ssh -i ~/.ssh/school ubuntu@44.192.76.110
