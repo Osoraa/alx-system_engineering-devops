@@ -11,5 +11,6 @@ $file = ssh_config
 exec {'update_ssh_config':
     cwd     => '/etc/ssh',
     path    => '/usr/bin',
-    command => "echo '${content}' >> ${file}"
+    command => "echo '${content}' >> ${file}",
+    user => root
 }
