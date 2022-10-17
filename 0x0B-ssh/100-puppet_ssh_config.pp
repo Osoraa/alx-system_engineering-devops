@@ -6,10 +6,10 @@ $content = @("EOF" /L)
 		IdentityFile ~/.ssh/school
 	| -EOF
 
-$file = config
+$file = ssh_config
 
 exec {'update_ssh_config':
-    cwd     => '/home/osoraa/.ssh',
+    cwd     => '/etc/ssh',
     path    => '/usr/bin',
     command => "echo '${content}' >> ${file}"
 }
