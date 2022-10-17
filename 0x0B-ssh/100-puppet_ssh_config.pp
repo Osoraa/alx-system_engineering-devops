@@ -1,9 +1,8 @@
 # Creates a configuration file for simple ssh
 
 $content = @("EOF" /L)
-	Home 35.175.212.77
-		Batchmode yes
-		IdentityFile ~/.ssh/school
+	    Batchmode yes
+	    IdentityFile ~/.ssh/school
 	| -EOF
 
 $file = 'ssh_config'
