@@ -6,11 +6,11 @@ $content = @("EOF" /L)
 		IdentityFile ~/.ssh/school
 	| -EOF
 
-$file = "/etc/ssh/ssh_config"
+$file = 'ssh_config'
 
 exec {'update_ssh_config':
-    # cwd     => '/etc/ssh',
+    cwd     => '/etc/ssh',
     path    => '/usr/bin',
     command => "echo '${content}' >> ${file}",
-    # user => root
+    user    => root
 }
