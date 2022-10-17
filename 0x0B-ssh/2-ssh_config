@@ -1,0 +1,9 @@
+# Read more about SSH config files: <https://linux.die.net/man/5/ssh_config>
+
+Host alias
+	HostName hostname
+	User user
+
+Host 35.175.212.77
+	BatchMode yes
+	IdentityFile ~/.ssh/school
