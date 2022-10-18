@@ -8,4 +8,4 @@ sudo cat << EOF > /var/www/html/index.nginx-debian.html
 Hello World!
 EOF
 
-sudo service reload nginx
+sudo service nginx reload
