@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Installs nginx web server on a machine
+
+sudo apt-get update -y
+sudo apt-get install nginx -y
+
+cat << EOF > /var/www/html/index.nginx-debian.html
+Hello World!
+EOF
