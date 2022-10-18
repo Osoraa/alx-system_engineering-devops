@@ -11,4 +11,4 @@ Hello World!
 EOF
 
 # Reload nginx service
-sudo service nginx reload
+sudo service nginx restart
