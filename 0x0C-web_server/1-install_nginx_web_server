@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 # Installs nginx web server on a machine
 
+# Update apt registry and install nginx webserver 
 sudo apt-get update -y
 sudo apt-get install nginx -y
 
-sudo cat << EOF > /var/www/html/index.nginx-debian.html
+# Modify default nginx html file
+sudo cat << EOF | sudo tee /var/www/html/index.nginx-debian.html
 Hello World!
 EOF
 
+# Reload nginx service
 sudo service nginx reload
