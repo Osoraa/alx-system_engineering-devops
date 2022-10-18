@@ -4,6 +4,8 @@
 sudo apt-get update -y
 sudo apt-get install nginx -y
 
-cat << EOF > /var/www/html/index.nginx-debian.html
+sudo cat << EOF > /var/www/html/index.nginx-debian.html
 Hello World!
 EOF
+
+sudo service reload nginx
