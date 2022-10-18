@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script transfers a file from a client to a server using scp.
 
-if (("$#" != 4)); then
+if (("$#" < 3)); then
     echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
     exit 1
 fi
@@ -18,10 +18,10 @@ if ! [ -e "$f_path" ]; then
     exit 1
 fi
 
-if ! [ -e "$ssh_key" ]; then
-    echo "$ssh_key doesn't exist!"
-    exit 1
-fi
+# if ! [ -e "$ssh_key" ]; then
+#     echo "$ssh_key doesn't exist!"
+#     exit 1
+# fi
 
 # Copy file to remote host
 scp -o StrictHostKeyChecking=no -i "$ssh_key" "$f_path" "$user"@"$ip_addr":
