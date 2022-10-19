@@ -8,10 +8,17 @@
 
 - Managing multiple sites with webservers like nginx
 
-- More sed commands
+- More in-depth sed
 
 - Nginx configuration files, multi-hosted sites on nginx
 
 - Setting up domain names and configuring DNS records
 
 - Improved and easy ssh access to frequent machines
+
+- Distinctions between frequently used directives, i.e.:
+  - The **return** directive
+  - The **rewiite** directive
+  - The **try_files** directive
+
+- Sub-domaining in nginx using the server_name directive

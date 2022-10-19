@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Installs nginx web server on a machine
+
+# Update apt registry and install nginx webserver
+sudo apt-get update -y
+sudo apt-get install nginx -y
+
+# Modify default nginx html file
+echo "Hello World" | sudo tee /var/www/html/index.nginx-debian.html
+
+# Modify 404 error file
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+# Rewrite and error_page directives
+# An alternative would be to use a heredoc to configure from scratch
+sudo sed -i "/server_name _;/a \\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\\n\\terror_page 404 /404.html;" /etc/nginx/sites-enabled/default
+
+# Reload nginx service
+sudo service nginx restart
