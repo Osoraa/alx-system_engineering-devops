@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Installs nginx web server on a machine
+
+# Update apt registry and install nginx webserver 
+sudo apt-get update -y
+sudo apt-get install nginx -y
+
+# Modify default nginx html file
+sudo cat << EOF | sudo tee /var/www/html/index.nginx-debian.html
+Hello World!
+EOF
+
+# Add the moved permanently rewrite(redirection) directive
+sudo sed -i '/server_name _;/a \\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-enabled/default
+
+# Reload nginx service
+sudo service nginx restart

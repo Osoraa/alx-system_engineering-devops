@@ -7,3 +7,11 @@
 - The SCP command
 
 - Managing multiple sites with webservers like nginx
+
+- More sed commands
+
+- Nginx configuration files, multi-hosted sites on nginx
+
+- Setting up domain names and configuring DNS records
+
+- Improved and easy ssh access to frequent machines
