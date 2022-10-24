@@ -1,18 +1,18 @@
 # A manifest to install and configure nginx
 
 package {'nginx':
-    provider => 'apt',
+    provider => 'apt'
 }
 
 # Default nginx config file (heredoc)
-$config = '@("EOF" /L)
+$config = @(EOF /L)
 	server {
 		listen 80 default_server;
 		listen [::]:80 default_server;
 
 		root /var/www/html;
 
-		index.html;
+		index index.html;
 
 		server_name _;
 		rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
@@ -21,7 +21,13 @@ $config = '@("EOF" /L)
 			try_files $uri $uri/ =404;
 		}
 	}
-	| -EOF'
+	| -EOF
+
+# Default file
+exec {'Default file':
+  path    => '/usr/bin',
+  command => "echo 'Hello World!' | sudo tee /var/www/html/index.html"
+}
 
 # Configures nginx with required configurations
 exec {'Config script':
@@ -29,8 +35,8 @@ exec {'Config script':
   command => "echo '${config}' | sudo tee /etc/nginx/sites-enabled/default"
 }
 
-# Default page
-exec {'Default file':
-  path    => '/usr/bin',
-  command => "echo 'Hello World!' | sudo tee /var/nginx/html/index.html"
+# Restart nginx
+exec {'Restart nginx':
+	path    => ['/usr/bin', '/usr/sbin'],
+	command => 'service nginx restart'
 }
