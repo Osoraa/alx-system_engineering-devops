@@ -25,7 +25,7 @@ $config = '@("EOF" /L)
 
 # Configures nginx with required configurations
 exec {'Config script':
-  path    => '/usr/bin'
+  path    => '/usr/bin',
   command => "echo '${config}' | sudo tee /etc/nginx/sites-enabled/default"
 }
 
