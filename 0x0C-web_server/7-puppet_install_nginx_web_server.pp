@@ -5,7 +5,7 @@ package {'nginx':
 }
 
 # Default nginx config file (heredoc)
-$config = @("EOF" /L)
+$config = '@("EOF" /L)
 	server {
 		listen 80 default_server;
 		listen [::]:80 default_server;
@@ -21,16 +21,16 @@ $config = @("EOF" /L)
 			try_files $uri $uri/ =404;
 		}
 	}
-	| -EOF
+	| -EOF'
 
 # Configures nginx with required configurations
 exec {'Config script':
-	path => '/usr/bin'
-	command => "echo '$config' | sudo tee /etc/nginx/sites-enabled/default"
+  path    => '/usr/bin'
+  command => "echo '${config}' | sudo tee /etc/nginx/sites-enabled/default"
 }
 
 # Default page
 exec {'Default file':
-	path => '/usr/bin',
-	command => "echo 'Hello World!' | sudo tee /var/nginx/html/index.html"
+  path    => '/usr/bin',
+  command => "echo 'Hello World!' | sudo tee /var/nginx/html/index.html"
 }
