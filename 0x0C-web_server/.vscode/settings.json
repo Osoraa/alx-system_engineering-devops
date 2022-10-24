@@ -1,0 +1,5 @@
+{
+    "[puppetfile]": {
+        "editor.defaultFormatter": "puppet.puppet-vscode"
+    }
+}
