@@ -26,11 +26,10 @@ server {
 	rewrite ^/github https://github.com/Osoraa permanent;
 	rewrite ^/linkedin https://linkedin.com/in/osoraa permanent;
 	error_page 404 /404.html;
+	add_header X-Served-By $HOSTNAME;
 
 	location / {
 		try_files \$uri \$uri/ =404;
-		# proxy_pass  http://mybackend;
-		add_header X-Served-By $HOSTNAME;
 	}
 }
 EOF
