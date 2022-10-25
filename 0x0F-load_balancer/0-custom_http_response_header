@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# A script that replicates a web server's configuration
+
+# Update apt registry and install nginx webserver
+sudo apt-get update -y
+sudo apt-get install nginx -y
+
+# Modify default nginx html file
+echo "Hello World" | sudo tee /var/www/html/index.nginx-debian.html
+
+# Modify 404 error file
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+# Rewrite and error_page directives
+cat << EOF | sudo tee /etc/nginx/sites-enabled/default
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+
+	index index.html index.nginx-debian.html;
+
+	server_name _
+	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+	rewrite ^/github https://github.com/Osoraa permanent;
+	rewrite ^/linkedin https://linkedin.com/in/osoraa permanent;
+	error_page 404 /404.html;
+
+	location / {
+		try_files \$uri \$uri/ =404;
+		# proxy_pass  http://mybackend;
+		add_header X-Served-By $HOSTNAME;
+	}
+}
+EOF
+
+# sudo sed -i "/server_name _;/a \\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\\n\\terror_page 404 /404.html;" /etc/nginx/sites-enabled/default
+
+# Reload nginx service
+sudo service nginx restart

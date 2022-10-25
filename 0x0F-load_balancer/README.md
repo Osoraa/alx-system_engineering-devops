@@ -20,3 +20,5 @@
   - The **try_files** directive
 
 - Sub-domaining in nginx using the server_name and location directives
+
+- Nginx headers
