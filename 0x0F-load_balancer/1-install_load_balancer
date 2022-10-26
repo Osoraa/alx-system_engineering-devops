@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Installs HAProxy on an Ubuntu machine
+
+sudo apt-get update -y
+sudo apt-get install haproxy -y
+
+cat << EOF | sudo tee -a /etc/haproxy/haproxy.cfg
+
+frontend tcp
+	bind *:80
+	default_backend web
+
+backend web
+	balance roundrobin
+	mode tcp
+	server web-01 35.175.212.77:80 check
+	server web-02 100.25.197.250:80 check
+
+EOF
+
+sudo service haproxy restart
