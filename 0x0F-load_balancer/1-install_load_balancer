@@ -6,13 +6,12 @@ sudo apt-get install haproxy -y
 
 cat << EOF | sudo tee -a /etc/haproxy/haproxy.cfg
 
-frontend tcp
+frontend web
 	bind *:80
 	default_backend web
 
 backend web
 	balance roundrobin
-	mode tcp
 	server web-01 35.175.212.77:80 check
 	server web-02 100.25.197.250:80 check
 
