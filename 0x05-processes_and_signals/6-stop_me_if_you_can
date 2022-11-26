@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Stops the to infinity and beyond process without using kill or killall
+
+pkill -f to_infinity_and_beyond
