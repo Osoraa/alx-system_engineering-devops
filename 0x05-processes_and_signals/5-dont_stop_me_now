@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Stops the to infinity and beyond process
+
+kill "$(pgrep bash | tail -n 3 | head -n 1)"
