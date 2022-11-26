@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Stops the to infinity and beyond process
 
-kill "$(pgrep bash | tail -n 3 | head -n 1)"
+kill "$(pgrep -f to_infinity_and_beyond)"
