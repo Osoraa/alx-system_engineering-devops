@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Prevent killing a script
+
+text="To infinity and beyond"
+sig_term_text="I am invincible!!!"
+trap 'echo $sig_term_text' SIGTERM
+
+while true; do
+    echo "$text"
+    sleep 2
+done
