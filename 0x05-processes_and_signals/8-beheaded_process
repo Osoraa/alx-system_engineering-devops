@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Forces a kill on a process with SIGKILL
+
+pkill -9 -f highlander
