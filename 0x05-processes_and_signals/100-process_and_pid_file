@@ -13,7 +13,6 @@ trap 'rm $pid_file; exit' SIGQUIT
 trap 'echo $sig_int_text' SIGINT
 
 # Create pid file
-# pgrep -f process_and_pid_file | sudo tee $pid_file
 echo $PPID > $pid_file
 
 while true; do
