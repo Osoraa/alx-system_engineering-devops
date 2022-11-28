@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Creates a file and handles specific signals
+
+# Text defaults
+text="To infinity and beyond"
+sig_term_text="I hate the kill command"
+sig_int_text="Y U no love me?!"
+pid_file="/var/run/myscript.pid"
+
+# Trap signals
+trap 'echo $sig_term_text; rm $pid_file; exit' SIGTERM
+trap 'rm $pid_file; exit' SIGQUIT
+trap 'echo $sig_int_text' SIGINT
+
+# Create pid file
+# pgrep -f process_and_pid_file | sudo tee $pid_file
+echo $PPID > $pid_file
+
+while true; do
+    echo "$text"
+    sleep 2
+done
