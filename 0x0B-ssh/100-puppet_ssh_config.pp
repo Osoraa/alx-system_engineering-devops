@@ -2,6 +2,7 @@
 
 $content = @("EOF" /L)
 	    Batchmode yes
+			PasswordAuthentication no
 	    IdentityFile ~/.ssh/school
 	| -EOF
 
