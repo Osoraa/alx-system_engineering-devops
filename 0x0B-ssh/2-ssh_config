@@ -4,6 +4,6 @@ Host alias
 	HostName hostname
 	User user
 
-Host 35.175.212.77
+Host 52.91.125.61
 	BatchMode yes
 	IdentityFile ~/.ssh/school
